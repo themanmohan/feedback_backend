@@ -16,7 +16,7 @@ app.use(express.json({extended:false}))
 
 //Define Route 
 app.use("/feedback",feedBackRoute)
-
-app.listen(4000,(err,data)=>{
+const port=process.env.port || 80const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
+app.listen(port,(err,data)=>{
   console.log("working")
 })
